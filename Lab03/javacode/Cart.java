@@ -1,4 +1,4 @@
-package Main;
+
 public class Cart {
 	private static final int MAX_NUMBERS_ORDERED = 20;
 	private static int qtyOrdered = 0;
@@ -61,21 +61,4 @@ public class Cart {
 			else break;
 		}
 	}
-	
-	public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2)
-	{
-		if(qtyOrdered < MAX_NUMBERS_ORDERED)
-		{
-			itemsOrdered[qtyOrdered] = dvd1;
-			qtyOrdered++;
-		}
-		else return;
-		if(qtyOrdered < MAX_NUMBERS_ORDERED)
-		{
-			itemsOrdered[qtyOrdered] = dvd2;
-			qtyOrdered++;
-		}
-		else return;
-	}
 }
-
