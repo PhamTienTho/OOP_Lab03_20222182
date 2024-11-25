@@ -1,4 +1,4 @@
-
+package Main;
 public class Cart {
 	private static final int MAX_NUMBERS_ORDERED = 20;
 	private static int qtyOrdered = 0;
@@ -29,7 +29,7 @@ public class Cart {
 			{
 				for(int j=i; j<qtyOrdered-1; j++)
 				{
-					itemsOrdered[j] = itemsOrdered[i];
+					itemsOrdered[j] = itemsOrdered[j+1];
 				}
 				qtyOrdered--;
 				System.out.println("The disc has been removed");
@@ -48,4 +48,34 @@ public class Cart {
 		}
 		return sum;
 	}
+
+	public void addDigitalVideoDisc(DigitalVideoDisc [] dvdList)
+	{
+		for(int i=0; i<dvdList.length; i++)
+		{
+			if(qtyOrdered < MAX_NUMBERS_ORDERED)
+			{
+				itemsOrdered[qtyOrdered] = dvdList[i];
+				qtyOrdered++;
+			}
+			else break;
+		}
+	}
+	
+	public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2)
+	{
+		if(qtyOrdered < MAX_NUMBERS_ORDERED)
+		{
+			itemsOrdered[qtyOrdered] = dvd1;
+			qtyOrdered++;
+		}
+		else return;
+		if(qtyOrdered < MAX_NUMBERS_ORDERED)
+		{
+			itemsOrdered[qtyOrdered] = dvd2;
+			qtyOrdered++;
+		}
+		else return;
+	}
 }
+
