@@ -1,4 +1,4 @@
-package Main;
+package aims.disc;
 public class DigitalVideoDisc {
 	private static int nbDigitalVideoDisc = 0;
 	private String title;
