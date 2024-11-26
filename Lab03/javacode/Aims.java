@@ -1,4 +1,3 @@
-import javax.imageio.metadata.IIOMetadataNode;
 
 public class Aims {
 
