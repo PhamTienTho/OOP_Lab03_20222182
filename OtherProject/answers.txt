@@ -1,0 +1,16 @@
+Excercise 6.1:
+	- What happens if users choose “Cancel”? 
+-> File sẽ không được lưu và khởi chạy nữa.
+	- How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do” and “I don’t”
+-> them tham số JOptionPane.YES_NO_OPTION. Chương trình như sau:
+import javax.swing.JOptionPane;
+
+public class ChoosingOption {
+    public static void main(String[] args) {
+        int option = JOptionPane.showConfirmDialog(null, "Do you want to change the first class ticket?", "Select an Option", JOptionPane.YES_NO_OPTION);
+
+        JOptionPane.showMessageDialog(null, "You've chosen: " + (option == JOptionPane.YES_OPTION ? "Yes" : "No"));
+
+        System.exit(0);
+    }
+}
