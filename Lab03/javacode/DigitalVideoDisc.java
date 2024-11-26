@@ -72,7 +72,7 @@ public class DigitalVideoDisc {
 				this.cost == disc.getCost() && 
 				this.director == disc.getDirector() &&
 				this.length == disc.getLength() && 
-				this.title == disc.getTitle())  		return true;
+				this.title == disc.getTitle())  return true;
 		else return false;
 	}
 	@Override
