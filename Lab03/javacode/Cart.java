@@ -1,11 +1,14 @@
-package Main;
+package aims.cart;
+
+import aims.disc.DigitalVideoDisc;
+
 public class Cart {
 	private static final int MAX_NUMBERS_ORDERED = 20;
 	private static int qtyOrdered = 0;
 	private DigitalVideoDisc itemsOrdered[] = 
 			new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 	
-	int getQtyOrderd()
+	public int getQtyOrderd()
 	{
 		return qtyOrdered;
 	}
@@ -100,4 +103,3 @@ public class Cart {
 		}
 	}
 }
-

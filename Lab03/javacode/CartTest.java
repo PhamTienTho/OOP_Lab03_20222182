@@ -1,4 +1,6 @@
-package Main;
+package test.cart;
+import aims.disc.DigitalVideoDisc;
+import aims.cart.Cart;
 
 public class CartTest {
 	public static void main(String[] args) {
