@@ -1,6 +1,8 @@
-1. When should accessor methods be used?
-	Chúng ta cần sử dụng accessor methods khi:
-	+ Khi muốn bảo vệ dữ liệu khỏi việc truy vấn trực tiếp từ bên ngoài, duy trì tính đóng gói
-	+ Khi cần kiểm soát truy nhập: Có thể them vào các logic kiểm tra, xác thực
-2. If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
-	Có, java cho phép có nhiều phương thức khởi tạo.
+1. ●	After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+---> Vì o1, o2 là 2 biến bản sao của biến tham chiếu jungleDVD và cinderellaDVD. Sau khi thực hiện hàm thì giá trị của o1 o2 thay đổi nhưng jungleDVD và cinderellaDVD vẫn giữ nguyên gias trị.
+2. ●	After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+---> Vì ở đây biến dvd là bản sao của biến tham chiếu jungleDVD trỏ tới đối tượng trong bộ nhớ heap. Sau đó dvd thay đổi giá trị thuộc tính của đối tượng nên đây là thay đổi giá trị thực sự của đối tượng.	
+3. Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?
+---> Vì đây là hành động ghi đè phương thức nên toString phải có kiểu trả về là String và phạm vi truy cập public
+4. Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case?
+---> Cả 2 cách đều có lợi thế tùy thuộc vào tính huống sử dung, nên vận dungj linh hoạt.
