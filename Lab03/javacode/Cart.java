@@ -77,6 +77,17 @@ public class Cart {
 		}
 		else return;
 	}
+	public void print()
+	{
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items:");
+		for(int i=0; i<qtyOrdered; i++)
+		{
+			System.out.println(itemsOrdered[i].toString());
+		}
+		System.out.println("Total cost: " + totalCost());
+		System.out.println("***************************************************");
+	}
 	
 	public void search (String title)
 	{
