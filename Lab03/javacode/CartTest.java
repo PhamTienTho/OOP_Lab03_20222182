@@ -1,4 +1,6 @@
-package Main;
+package test.cart;
+import aims.disc.DigitalVideoDisc;
+import aims.cart.Cart;
 
 public class CartTest {
 	public static void main(String[] args) {
@@ -14,6 +16,13 @@ public class CartTest {
 		cart.addDigitalVideoDisc(dvd3);
 		
 		cart.print();
+		
+		String title1 = "Star Wars";
+		cart.search(title1);
+		String title2 = "The Lion king";
+		cart.search(title2);
+		String title3 = "Aladin";
+		cart.search(title3);
 		
 	}
 }
