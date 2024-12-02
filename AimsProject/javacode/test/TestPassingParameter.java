@@ -1,5 +1,5 @@
 package test.disc;
-import aims.disc.DigitalVideoDisc;
+import aims.media.DigitalVideoDisc;
 public class TestPassingParameter {
 	public static void main(String[] args) {
 		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
