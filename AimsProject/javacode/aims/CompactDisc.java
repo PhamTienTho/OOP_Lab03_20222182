@@ -34,7 +34,6 @@ public class CompactDisc extends Disc implements Playable{
 		}
 		tracks.add(track);
 		this.setLength(getLength() - track.getLength());
-		System.out.println("the track is added sucessfully");
 		return true;
 	}
 	
@@ -76,6 +75,12 @@ public class CompactDisc extends Disc implements Playable{
 		{
 			track.play();
 		}
+	}
+	@Override 
+	public String toString()
+	{
+		return "CD: " + this.getTitle() + " - " + this.getCategory() 
+				+ " - " + this.getCost() + " - " + this.getLength();
 	}
 	
 	

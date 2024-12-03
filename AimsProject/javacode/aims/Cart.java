@@ -10,6 +10,10 @@ public class Cart {
 	private static final int MAX_NUMBERS_ORDERED = 20;
 	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 	
+	public ArrayList<Media> getItemOrdered()
+	{
+		return this.itemsOrdered;
+	}
 	public float totalCost() 
 	{
 		float sum = 0;
@@ -24,13 +28,10 @@ public class Cart {
 	{
 		if(itemsOrdered.size() < MAX_NUMBERS_ORDERED)
 		{
-			for(Media m : itemsOrdered)
+			if(this.contain(media))
 			{
-				if(m.getTitle().equals(media.getTitle()))
-				{
-					System.out.println("The media existed");
-					return;
-				}
+				System.out.println("The media existed");
+				return;
 			}
 			itemsOrdered.add(media);
 			System.out.println("Added the media: " + media.getTitle());
@@ -44,7 +45,7 @@ public class Cart {
 		while(iterator.hasNext())
 		{
 			Media m = iterator.next();
-			if(m.getTitle().equals(media.getTitle())) 
+			if(m.getTitle().equals(media.getTitle()))
 			{
 				iterator.remove();
 				System.out.println("Removed the media: " + media.getTitle());
@@ -73,12 +74,40 @@ public class Cart {
 			if(title.equals(media.getTitle()))
 			{
 				System.out.println(media.toString());
+				return;
 			}
 		}
+		System.out.println("The media doesnot exist");
+	}
+	
+	public void search (int id)
+	{
+		for(Media media : itemsOrdered)
+		{
+			if(id == media.getId())
+			{
+				System.out.println(media.toString());
+				return;
+			}
+		}
+		System.out.println("The media doesnot exist");
 	}
 	
 	public int getQtyOrderd()
 	{
 		return itemsOrdered.size();
 	}
+	
+	public boolean contain(Media media)
+	{
+		for(Media m : itemsOrdered)
+		{
+			if(m.equals(media))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }

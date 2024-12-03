@@ -30,7 +30,6 @@ public class Book extends Media{
 			}
 		}
 		authors.add(authorName);
-		System.out.println("Author is added sucessfully");
 	}
 	
 	public void removeAuthor(String authorName)
@@ -47,6 +46,11 @@ public class Book extends Media{
 		}
 		System.out.println("The author doesnot exist");
 	}
-	
+	@Override
+	public String toString()
+	{
+		return "Book: " + this.getTitle() + " - " + this.getCategory()
+				+ " - " + this.getCost();
+	}
 	
 }
