@@ -13,13 +13,10 @@ public class Store {
 	{
 		if(itemsInStore.size() < MAX_NUMBERS_ITEMS)
 		{
-			for(Media m : itemsInStore)
+			if(this.contain(media))
 			{
-				if(m.getTitle().equals(media.getTitle()))
-				{
-					System.out.println("The media existed");
-					return;
-				}
+				System.out.println("The media existed");
+				return;
 			}
 			itemsInStore.add(media);
 			System.out.println("Added the media: " + media.getTitle());
@@ -41,5 +38,37 @@ public class Store {
 			}
 		}
 		System.out.println("Could not be found: " + media.getTitle());
+	}
+	public boolean contain(Media media)
+	{
+		for(Media m : itemsInStore)
+		{
+			if(m.equals(media))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public Media search(String title)
+	{
+		for(Media media : itemsInStore)
+		{
+			if(media.getTitle().equals(title)) 
+			{
+				return media;
+			}
+		}
+		return null;
+	}
+	public void print_store()
+	{
+		System.out.println("--------------------------------");
+		System.out.println("The list of items in the store:");
+		for(Media media : itemsInStore)
+		{
+			System.out.println(media.toString());
+		}
 	}
 }
