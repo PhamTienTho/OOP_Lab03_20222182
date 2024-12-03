@@ -3,7 +3,6 @@ package aims.Aims;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Collection;
 import java.util.Collections;
 
 import aims.cart.Cart;

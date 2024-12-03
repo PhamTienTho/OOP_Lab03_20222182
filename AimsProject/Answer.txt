@@ -1,8 +1,18 @@
-1. ●	After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
----> Vì o1, o2 là 2 biến bản sao của biến tham chiếu jungleDVD và cinderellaDVD. Sau khi thực hiện hàm thì giá trị của o1 o2 thay đổi nhưng jungleDVD và cinderellaDVD vẫn giữ nguyên gias trị.
-2. ●	After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
----> Vì ở đây biến dvd là bản sao của biến tham chiếu jungleDVD trỏ tới đối tượng trong bộ nhớ heap. Sau đó dvd thay đổi giá trị thuộc tính của đối tượng nên đây là thay đổi giá trị thực sự của đối tượng.	
-3. Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?
----> Vì đây là hành động ghi đè phương thức nên toString phải có kiểu trả về là String và phạm vi truy cập public
-4. Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case?
----> Cả 2 cách đều có lợi thế tùy thuộc vào tính huống sử dung, nên vận dungj linh hoạt.
+	1, Which classes are aggregates of other classes? Checking all constructors of whole classes if they initialize for their parts
+
+---> CompactDisc là kết tập của Track, Cart và Store là kết tập của Media, Book ok là kết tập của String.
+
+	2, When overriding the equals() method of the Object class, you will have to cast the Object parameter obj to the type of Object that you are dealing with. For example, in the Media class, you must cast the Object obj to a Media, and then check the equality of the two objects’ attributes as the above requirements (i.e. title for Media; title and length for Track). If the passing object is not an instance of Media, what happens?
+
+---> Nếu tham số truyền vào không phải instance của Media thì sẽ xảy ra ngoại lệ ClassCastException khi ta cố ép kiểu (Media) obj.
+
+	3, Question: Alternatively, to compare items in the cart, instead of using Comparator, we can use the Comparable interface and override the compareTo()method. You can refer to the Java docs to see the information of this interface. 
+Suppose we are taking this Comparable interface approach.
+-	What class should implement the Comparable interface?
+-	In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+-	Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+-	Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+
+---> Chúng ta chỉ nên sử dụng Comparable khi lớp đó chỉ cần sắp xếp theo một quy luật duy nhất. Chúng ta không thể vừa sắp xếp theo 2 cách bằng vì
+Comparable vì mỗi class không thể nạp chồng được phương thức compareTo(T obj) (vì phương thức sort chỉ chap nhận int compareTo(T obj) nên nạp chồng cũng vô ích).
+     Tôi sẽ tạo một lớp mới, lớp này implements Comparator<Media> và triển khai phương thức compare() theo quy tắc trên. Sau đó truyền đối tượng của lớp này vào phương thức sort để sắp xếp.
